@@ -1,0 +1,3 @@
+plugins/
+!plugins/__init__.py
+!plugins/__sothoth_loader.py
