@@ -5,6 +5,6 @@ def load_into(sothoth):
     #pylint: disable=no-member
     for key, func in [
         ("exit", hooks.exit),
-        ("exit", hooks.help)
+        ("help", hooks.help)
     ]:
         sothoth.load_hook(key, func)

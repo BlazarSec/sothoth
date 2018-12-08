@@ -1,6 +1,3 @@
-
-
-
 class SothothInstance():
     def __init__(self):
         self.command_hooks = {} # string: func

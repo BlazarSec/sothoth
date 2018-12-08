@@ -12,12 +12,11 @@ from entry import SothothInstance, Component
 sys.path.insert(0, f"{dirname(realpath(__file__))}/..")
 
 from plugins import sothoth_loader
-
-#import sothoth_loader
+from server import Server
 
 # print wrapper for stderror
 def perror(error, *objects, end='\n', **kwargs):
-    print(*objects, file=sys.stderr, **kwargs, end=f" - {type(error).__name__}: {error}.{end}")
+    print(*objects, file=sys.stderr, **kwargs, end=f": {type(error).__name__} - {error}.{end}")
 
 def usage():
     print(
@@ -25,7 +24,7 @@ def usage():
     )
 
 def main():
-    try:
+    """try:
         optarg, floating = getopt.getopt(
             sys.argv[1:],
             "h",
@@ -36,7 +35,7 @@ def main():
     
     except getopt.GetoptError as e:
         perror(e, "Getopt error")
-        return 1
+        return 1"""
     
     """
     initialize Sothoth instance and load core command hooks, followed by loading plugins
@@ -50,7 +49,8 @@ def main():
         perror(e, "A naming conflict has occurred while loading src/core")
 
     
-    return 1
+    
+    return 0
 
 
 if __name__ == "__main__":
